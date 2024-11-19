@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "ecommerce_backend" {
   [
     {
       "name": "ecommerce_backend",
-      "image": "",
+      "image": "nginx:latest",
       "essential": true,
       "portMappings": [
         {

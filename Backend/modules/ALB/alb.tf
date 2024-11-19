@@ -27,7 +27,7 @@ resource "aws_alb_target_group" "ecommerce_backend_alb_target_group" {
 # port exposed from the application load balancer
 resource "aws_alb_listener" "ecommerce_backend_listener" {
   load_balancer_arn = aws_alb.ecommerce_backend_alb.id
-  port              = "80"
+  port              = "8080"
   protocol          = "HTTP"
 
   default_action {

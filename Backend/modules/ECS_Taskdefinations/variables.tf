@@ -18,3 +18,7 @@ variable "image_version" {
 variable "ecommerce_backend_ecr_repository_url" {
   type = string
 }
+
+variable "log_group_name" {
+  default = "ecs/fargate"
+}

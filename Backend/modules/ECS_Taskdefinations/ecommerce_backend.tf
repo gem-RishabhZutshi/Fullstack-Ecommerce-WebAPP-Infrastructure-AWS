@@ -51,7 +51,7 @@ resource "aws_ecs_task_definition" "ecommerce_backend" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/${var.project_name}-${var.environment}",
+          "awslogs-group": "${var.log_group_name}/${var.project_name}-${var.environment}",
           "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs"
         }

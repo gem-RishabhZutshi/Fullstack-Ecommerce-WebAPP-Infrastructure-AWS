@@ -24,7 +24,6 @@ module "ECS_Services" {
   ecommerce_backend_alb_target_group_arn = module.ALB.ecommerce_backend_alb_target_group_arn
   ecommerce_backend_listener_arn = module.ALB.ecommerce_backend_listener_arn
   ecs_cluster_name = module.ECS_Cluster.ecs_cluster_name
-
 }
 
 module "ECS_Cluster" {
@@ -35,6 +34,11 @@ module "ECS_Cluster" {
 
 module "ECR" {
   source = "../modules/ECR"
+  environment = "dev"
+}
+
+module "Cloudwatch" {
+  source = "../modules/Cloudwatch"
   environment = "dev"
 }
 

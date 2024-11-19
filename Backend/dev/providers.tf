@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "ecommerce-app-terraform-state"
+    bucket = "ecommerce-app-backend-terraform-state"
     key    = "terraform/ecommerce-app-dev/tf.state"
     region = "ap-south-1"
   }

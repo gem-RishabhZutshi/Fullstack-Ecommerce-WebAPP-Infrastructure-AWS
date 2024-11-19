@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "ecommerce_backend" {
   [
     {
       "name": "ecommerce_backend",
-      "image": "${replace(jsonencode("${var.ecommerce_backend_ecr_repository_url}:${var.image_version}"), "/\"([0-9]+\\.?[0-9]*)\"/", "$1")}",
+      "image": "",
       "essential": true,
       "portMappings": [
         {

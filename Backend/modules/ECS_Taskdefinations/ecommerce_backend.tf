@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "ecommerce_backend" {
   container_definitions = <<EOF
   [
     {
-      "name": "ecommerce_backend",
+      "name": "ecommerce-backend-dev",
       "image": "nginx:latest",
       "essential": true,
       "portMappings": [

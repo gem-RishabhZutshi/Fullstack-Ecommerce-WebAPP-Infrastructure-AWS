@@ -1,0 +1,32 @@
+name: "Provision Backend Dev Infrastructure for E-CommerceAPP"
+
+on: workflow_dispatch
+
+env:
+  AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+  AWS_REGION: AWS_REGION
+
+jobs:
+  deploy-dev:
+    name: deploy-airflow-dev-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.9
+          
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.6.1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy
+        run: |
+          cd Backend/dev && terraform init && terraform apply --auto-approve

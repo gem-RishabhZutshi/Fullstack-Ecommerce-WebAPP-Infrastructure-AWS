@@ -14,7 +14,7 @@ resource "aws_ecs_task_definition" "ecommerce_backend" {
       "portMappings": [
         {
           "containerPort": 8080,
-          "hostPort": 8080,
+          "hostPort": 8080
         } 
       ],
       "command": [],

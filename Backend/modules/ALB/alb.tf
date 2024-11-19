@@ -1,5 +1,5 @@
 resource "aws_alb" "ecommerce_backend_alb" {
-  name            = "${var.project_name}-${var.environment}-ALB"
+  name            = "${var.project_name}-${var.environment}-alb"
   internal = true
   load_balancer_type = "application"
   subnets         = [var.ecommerceApp-VPC-private-subnet-one, var.ecommerceApp-VPC-private-subnet-two]
@@ -7,7 +7,7 @@ resource "aws_alb" "ecommerce_backend_alb" {
 }
 
 resource "aws_alb_target_group" "ecommerce_backend_alb_target_group" {
-  name        = "${var.project_name}-${var.environment}-service-TG"
+  name        = "${var.project_name}-${var.environment}-service-tg"
   port        = 8080
   protocol    = "HTTP"
   vpc_id      = var.ecommerce_app_vpc_id

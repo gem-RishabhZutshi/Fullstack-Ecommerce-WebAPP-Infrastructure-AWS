@@ -1,5 +1,5 @@
 variable "project_name" {
-  default = "ecommerce_backend"
+  default = "ecommerce-backend"
 }
 
 variable "environment" {

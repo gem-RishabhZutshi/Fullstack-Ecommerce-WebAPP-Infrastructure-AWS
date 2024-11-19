@@ -3,11 +3,11 @@ output "ecommerce_app_vpc_id" {
 }
 
 output "ecommerceApp-VPC-public-subnet-one" {
-    value = aws_subnet.public_subnet1
+    value = aws_subnet.public_subnet1.id
 }
 
 output "ecommerceApp-VPC-public-subnet-two" {
-    value = aws_subnet.public_subnet2
+    value = aws_subnet.public_subnet2.id
 }
 
 output "ecommerceApp-VPC-private-subnet-one" {

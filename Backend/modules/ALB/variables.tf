@@ -7,9 +7,9 @@ variable "environment" {
   type = string
 }
 
-variable "certificate_arn" {
-  default = "arn:aws:acm:us-east-1:791167451670:certificate/74464c2d-fd4b-438f-be41-13b8f9a69cc7"
-}
+# variable "certificate_arn" {
+#   default = "arn:aws:acm:us-east-1:791167451670:certificate/74464c2d-fd4b-438f-be41-13b8f9a69cc7"
+# }
 
 variable "ecommerce_app_vpc_id" {
   type = string

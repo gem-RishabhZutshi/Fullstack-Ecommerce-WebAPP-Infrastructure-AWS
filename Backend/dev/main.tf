@@ -37,10 +37,10 @@ module "ECR" {
   environment = "dev"
 }
 
-module "Cloudwatch" {
-  source = "../modules/Cloudwatch"
-  environment = "dev"
-}
+# module "Cloudwatch" {
+#   source = "../modules/Cloudwatch"
+#   environment = "dev"
+# }
 
 module "ALB" {
   source = "../modules/ALB"

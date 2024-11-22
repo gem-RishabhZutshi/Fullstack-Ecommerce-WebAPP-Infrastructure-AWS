@@ -1,3 +1,8 @@
+data "aws_ecr_image" "service_image" {
+  repository_name = "${var.project_name}-${var.environment}"    
+  most_recent = true
+}
+
 resource "aws_ecs_task_definition" "ecommerce_backend" {
   family                   = "${var.project_name}-${var.environment}"
   network_mode             = "awsvpc"
@@ -9,7 +14,7 @@ resource "aws_ecs_task_definition" "ecommerce_backend" {
   [
     {
       "name": "ecommerce-backend-dev",
-      "image": "nginx:latest",
+      "image": "${data.aws_ecr_image.service_image}",
       "essential": true,
       "portMappings": [
         {
